@@ -30,7 +30,6 @@ Verified Apache by accessing the default page using internal IP.
 🛒 3. Download and Install OpenCart
 Steps performed:
 
-
 cd /var/www/html
 sudo rm index.html
 sudo curl -L -o opencart.zip https://github.com/opencart/opencart/releases/download/4.0.2.3/opencart-4.0.2.3.zip
@@ -51,6 +50,7 @@ CREATE DATABASE opencart;
 CREATE USER 'ocuser'@'localhost' IDENTIFIED BY 'StrongPassword@123';
 GRANT ALL PRIVILEGES ON opencart.* TO 'ocuser'@'localhost';
 FLUSH PRIVILEGES;
+
 🌐 5. Web-Based Configuration
 Accessed OpenCart setup via: http://<INTERNAL-IP>
 
@@ -81,8 +81,7 @@ Terminal showing installed packages
 Successfully created a cloud-based simulated e-commerce environment using open-source tools, ready for applying security controls in upcoming phases.
 
 📂 Folder Structure
-pgsql
-Copy code
+
 Phase 1 Setup and Orientation/
 ├── setup_instructions.md
 └── Screenshots/
@@ -92,4 +91,3 @@ Phase 1 Setup and Orientation/
     ├── opencart-admin-login.png
     ├── opencart-storefront.png
     └── vm-instance-details.png
-✅ Completed Deliverable
