@@ -1,0 +1,95 @@
+✅ Phase 1 Setup and Orientation/setup_instructions.md
+markdown
+
+# Phase 1: Setup and Orientation – E-commerce Security 
+
+This document outlines the step-by-step procedure for setting up a simulated e-commerce environment using **Google Cloud Platform**, **Ubuntu**, and **OpenCart** as part of the E-commerce Security Lab project.
+
+---
+
+## 🧰 1. Environment Overview
+
+- **Cloud Provider**: Google Cloud Platform (GCP)
+- **VM Type**: e2-medium
+- **OS**: Ubuntu 22.04 LTS (CLI-based)
+- **Firewall**: Configured to allow HTTP (80), HTTPS (443), and SSH (22)
+- **Static Internal IP**: Reserved and attached to the VM
+
+---
+
+## 🔧 2. Installed Packages and Stack
+
+Installed essential packages for LAMP stack and OpenCart dependencies:
+
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install apache2 mysql-server php libapache2-mod-php php-mysql unzip curl -y
+sudo apt install php-gd php-curl php-zip -y
+Verified Apache by accessing the default page using internal IP.
+
+🛒 3. Download and Install OpenCart
+Steps performed:
+
+
+cd /var/www/html
+sudo rm index.html
+sudo curl -L -o opencart.zip https://github.com/opencart/opencart/releases/download/4.0.2.3/opencart-4.0.2.3.zip
+sudo unzip opencart.zip
+sudo mv opencart-4.0.2.3/upload/* .
+sudo rm -rf opencart-4.0.2.3 opencart.zip
+Set correct permissions:
+
+
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
+🔐 4. MySQL Configuration
+Configured MySQL for OpenCart:
+
+sql
+
+CREATE DATABASE opencart;
+CREATE USER 'ocuser'@'localhost' IDENTIFIED BY 'StrongPassword@123';
+GRANT ALL PRIVILEGES ON opencart.* TO 'ocuser'@'localhost';
+FLUSH PRIVILEGES;
+🌐 5. Web-Based Configuration
+Accessed OpenCart setup via: http://<INTERNAL-IP>
+
+Completed installation wizard:
+
+Verified PHP requirements
+
+Entered DB credentials
+
+Created admin account
+
+Deleted install folder after setup:
+
+
+sudo rm -rf /var/www/html/install
+🧠 6. Key Screenshots
+GCP VM instance details
+
+Apache default page
+
+OpenCart store front
+
+OpenCart admin login and dashboard
+
+Terminal showing installed packages
+
+🎯 7. Phase 1 Outcome
+Successfully created a cloud-based simulated e-commerce environment using open-source tools, ready for applying security controls in upcoming phases.
+
+📂 Folder Structure
+pgsql
+Copy code
+Phase 1 Setup and Orientation/
+├── setup_instructions.md
+└── Screenshots/
+    ├── apache-default-page.png
+    ├── installed-tools-terminal.png
+    ├── opencart-admin-dashboard.png
+    ├── opencart-admin-login.png
+    ├── opencart-storefront.png
+    └── vm-instance-details.png
+✅ Completed Deliverable
