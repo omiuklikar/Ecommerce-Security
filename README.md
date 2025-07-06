@@ -1,4 +1,4 @@
-<h1 align="center">🛡️ E-commerce Security Lab</h1>
+<h1 align="center">🛡️ E-commerce Security </h1>
 <p align="center">
   <b>Simulating real-world cyber defense for an e-commerce platform</b><br>
   <i>Built using Open Source Tools • Aligned with Indian & International Compliance Standards</i>
