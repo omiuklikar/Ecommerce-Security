@@ -74,6 +74,4 @@ This document outlines the asset inventory for the simulated e-commerce company.
 
 ---
 
-**Next Step:** Identify threats and vulnerabilities against each asset type.
 
-Proceed to: `2_Threats_and_Vulnerabilities.md`
